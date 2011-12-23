@@ -3,4 +3,6 @@ public/system
 config/database.yml
 .rvmrc
 .rbenv-version
-
+.vim/undo/
+.vim/tmp
+.vim/.*

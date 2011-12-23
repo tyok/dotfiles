@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 " Behaviors
 set nocompatible
 set modeline
@@ -29,11 +31,6 @@ set scrolloff=2
 set sidescrolloff=5
 set sidescroll=1
 
-" Syntax highlight/completion
-syntax on
-syntax sync fromstart
-set omnifunc=syntaxcomplete#Complete
-
 " Widgets
 set winminheight=0
 set number ruler
@@ -63,6 +60,11 @@ set linebreak
 set nofoldenable
 nnoremap j gj
 nnoremap k gk
+
+" Syntax highlight/completion
+syntax on
+syntax sync fromstart
+set omnifunc=syntaxcomplete#Complete
 
 " tab/indent
 filetype plugin indent on
