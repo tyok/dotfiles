@@ -1,0 +1,21 @@
+nnoremap ; :
+
+map <C-k> :tabprevious<CR>
+map <C-j> :tabnext<CR>
+
+map <C-S-k> :tabm -1<CR>
+map <C-S-j> :tabm +1<CR>
+
+map <C-up>   <C-k>
+map <C-down> <C-j>
+
+map <C-S-up>   <C-S-k>
+map <C-S-down> <C-S-j>
+
+set incfind
+set hlfind
+
+set titlestring=
+
+" vim: ft=vim: 
+

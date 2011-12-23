@@ -1,0 +1,6 @@
+*.sw[nop]
+public/system
+config/database.yml
+.rvmrc
+.rbenv-version
+
