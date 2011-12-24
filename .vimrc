@@ -1,5 +1,7 @@
 call pathogen#infect()
 
+source $HOME/.vim/vimrc/functions.vim
+
 " Behaviors
 set nocompatible
 set modeline
@@ -102,13 +104,3 @@ set statusline+=\ %-.50(%<%f\ %y%)%m
 set statusline+=%=
 set statusline+=%{StatuslineCurrentHighlight()}\ \ 
 set statusline+=%-10.(line\ %l\ col\ %c%)\ "(%P)\ 
-
-"return the syntax highlight group under the cursor ''
-function! StatuslineCurrentHighlight()
-    let name = synIDattr(synID(line('.'),col('.'),1),'name')
-    if name == ''
-        return ''
-    else
-        return '[' . name . ']'
-    endif
-endfunction
