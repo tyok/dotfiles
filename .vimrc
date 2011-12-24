@@ -104,3 +104,10 @@ set statusline+=\ %-.50(%<%f\ %y%)%m
 set statusline+=%=
 set statusline+=%{StatuslineCurrentHighlight()}\ \ 
 set statusline+=%-10.(line\ %l\ col\ %c%)\ "(%P)\ 
+
+" NERDTree
+let NERDTreeWinPos="right"
+let NERDTreeMinimalUI=1
+let g:NERDTreeWinSize = 40
+map <F9> :NERDTreeToggle<CR>
+map <S-Tab> :NERDTreeToggle<CR>
