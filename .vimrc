@@ -53,7 +53,7 @@ set wildignore+=.*/** " ignore hidden dir
 set incsearch
 set hlsearch
 set ignorecase smartcase
-nnoremap <CR> :nohlsearch<cr>
+nnoremap <CR> :nohlsearch<CR>\|<CR>
 map <Leader>c :noh<CR>
 
 " Wrap
@@ -130,3 +130,26 @@ map <Tab>s :CommandTFlush<CR>\|:CommandT spec<CR>
 
  " Gundo
 nmap <Tab>u :GundoToggle<CR>
+
+function Edit(file)
+  if exists("b:NERDTreeRoot")
+    wincmd p
+  endif
+
+  execute "e " . fnameescape(a:file)
+
+ruby << RUBY
+  destination = File.expand_path(VIM.evaluate(%{system("dirname " . shellescape(a:file, 1))}))
+  pwd         = File.expand_path(Dir.pwd)
+  home        = pwd == File.expand_path("~")
+
+  if home || Regexp.new("^" + Regexp.escape(pwd)) !~ destination
+    VIM.command(%{call ChangeDirectory(fnamemodify(a:file, ":h"), 0)})
+  end
+RUBY
+endfunction
+
+if exists("loaded_nerd_tree")
+  call s:DefineCommand("e", "Edit")
+  cabbrev Edit! e!
+endif
