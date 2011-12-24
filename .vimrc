@@ -124,3 +124,6 @@ map <Tab>m :CommandTFlush<CR>\|:CommandT app/models<CR>
 map <Tab>c :CommandTFlush<CR>\|:CommandT app/controllers<CR>
 map <Tab>v :CommandTFlush<CR>\|:CommandT app/views<CR>
 map <Tab>s :CommandTFlush<CR>\|:CommandT spec<CR>
+
+ " Gundo
+nmap <Tab>u :GundoToggle<CR>
