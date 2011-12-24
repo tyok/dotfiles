@@ -96,6 +96,9 @@ map <C-Up> <C-W>k
 map <C-Right> <C-W>l
 map <C-Left> <C-W>h
 
+" Quickly close that bottom split
+nmap <Tab>q :lclose<CR> :cclose<CR>
+
 " Statusline
 set statusline=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
