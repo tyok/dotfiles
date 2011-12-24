@@ -111,3 +111,16 @@ let NERDTreeMinimalUI=1
 let g:NERDTreeWinSize = 40
 map <F9> :NERDTreeToggle<CR>
 map <S-Tab> :NERDTreeToggle<CR>
+
+" Command-T
+let g:CommandTMatchWindowReverse=1
+let g:CommandTMaxFiles=9000
+let g:CommandTMaxDepth=6
+map <Tab>t :CommandTFlush<CR>\|:CommandT<CR>
+map <Tab>b :CommandTBuffer<CR>
+
+" Command-T Rails
+map <Tab>m :CommandTFlush<CR>\|:CommandT app/models<CR>
+map <Tab>c :CommandTFlush<CR>\|:CommandT app/controllers<CR>
+map <Tab>v :CommandTFlush<CR>\|:CommandT app/views<CR>
+map <Tab>s :CommandTFlush<CR>\|:CommandT spec<CR>
