@@ -33,6 +33,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export EDITOR=vim
+export rvm_path=$HOME/.rvm
 
 alias all="ls -hal"
 alias gvim="gvim -f $@ &> /dev/null" # eradicate gvim error when exiting
