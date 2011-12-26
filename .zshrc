@@ -35,7 +35,9 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=vim
 
 alias all="ls -hal"
-alias gvim="gvim $@ &> /dev/null" # eradicate gvim error when exiting
+alias gvim="gvim -f $@ &> /dev/null" # eradicate gvim error when exiting
+                                     # add -f so gvim wouldn't run slowly
+# alias gvim="echo 'no! gvim crash gnome 3'"
 alias hgrep="history | grep $@"
 alias pgrep="ps ax | grep $@"
 
