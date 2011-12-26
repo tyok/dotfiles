@@ -130,3 +130,7 @@ map <Tab>s :CommandTFlush<CR>\|:CommandT spec<CR>
 
 " Gundo
 nmap <Tab>u :GundoToggle<CR>
+
+" Tabular
+nmap <Leader><Tab> :exec ':Tab /'.getline('.')[col('.')-1].'.*$'<CR>
+vmap <Leader><Tab> y:Tab /<C-R>".*$<CR>
