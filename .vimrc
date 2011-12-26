@@ -101,7 +101,7 @@ nmap <Tab>q :lclose<CR> :cclose<CR>
 
 " Statusline
 set statusline=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=\ %-.50(%<%f\ %y%)%m
 set statusline+=%=
@@ -134,3 +134,9 @@ nmap <Tab>u :GundoToggle<CR>
 " Tabular
 nmap <Leader><Tab> :exec ':Tab /'.getline('.')[col('.')-1].'.*$'<CR>
 vmap <Leader><Tab> y:Tab /<C-R>".*$<CR>
+
+" syntastic
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_warnings=0
+let g:syntastic_stl_format='[%E{err:%fe #%e}%B{, }%W{warn:%fw #%w}]'
+
