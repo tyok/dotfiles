@@ -1,7 +1,7 @@
 nnoremap ; :
 
-map <C-k> :tabprevious<CR>
-map <C-j> :tabnext<CR>
+map <C-k> <C-PageUp>
+map <C-j> <C-PageDown>
 
 map <C-S-k> :tabm -1<CR>
 map <C-S-j> :tabm +1<CR>
