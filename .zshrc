@@ -48,6 +48,8 @@ alias ber='bundle exec rake'
 alias bo='bundle open'
 
 alias g='git'
+alias gr='git remote'
+alias gsub='git submodule'
 
 # LOL
 alias plz="sudo"
