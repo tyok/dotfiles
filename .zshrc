@@ -27,7 +27,7 @@ ZSH_THEME="tyok"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found gem) # don't use bundler, git: slow!
+plugins=(command-not-found gem zsh-syntax-highlighting) # don't use bundler, git: slow!
 
 source $ZSH/oh-my-zsh.sh
 
