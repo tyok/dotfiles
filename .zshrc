@@ -34,8 +34,9 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export EDITOR=vim
 export rvm_path=$HOME/.rvm
+export TERM=xterm-256color
 
-alias all="ls -hal"
+alias all="ls -hal --group-directories-first"
 alias gvim="gvim -f $@ &> /dev/null" # eradicate gvim error when exiting
                                      # add -f so gvim wouldn't run slowly
 # alias gvim="echo 'no! gvim crash gnome 3'"
