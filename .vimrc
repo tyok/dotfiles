@@ -1,6 +1,7 @@
 call pathogen#infect()
 
 source $HOME/.vim/vimrc/functions.vim
+colo tomorrow-night
 
 " Behaviors
 set nocompatible
@@ -97,11 +98,15 @@ map <C-Right> <C-W>l
 map <C-Left> <C-W>h
 
 " Quickly close that bottom split
-nmap <Tab>q :lclose<CR> :cclose<CR>
+nmap <Tab>q :lclose<CR>\|:cclose<CR>
+nmap <Tab>e :Errors<CR>
 
 " Statusline
 set statusline=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+
+if exists("g:loaded_syntastic_plugin")
+    set statusline+=%{SyntasticStatuslineFlag()}
+endif
 set statusline+=%*
 set statusline+=\ %-.50(%<%f\ %y%)%m
 set statusline+=%=
