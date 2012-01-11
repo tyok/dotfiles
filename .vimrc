@@ -104,9 +104,8 @@ nmap <Tab>e :Errors<CR>
 " Statusline
 set statusline=%#warningmsg#
 
-if exists("g:loaded_syntastic_plugin")
-    set statusline+=%{SyntasticStatuslineFlag()}
-endif
+set statusline+=%{SyntasticStatuslineFlag()} " syntastic
+
 set statusline+=%*
 set statusline+=\ %-.50(%<%f\ %y%)%m
 set statusline+=%=
@@ -120,18 +119,29 @@ let g:NERDTreeWinSize = 40
 map <F9> :NERDTreeToggle<CR>
 map <S-Tab> :NERDTreeToggle<CR>
 
-" Command-T
-let g:CommandTMatchWindowReverse=1
-let g:CommandTMaxFiles=9000
-let g:CommandTMaxDepth=6
-map <Tab>t :CommandTFlush<CR>\|:CommandT<CR>
-map <Tab>b :CommandTBuffer<CR>
+" if Command-T
+    " let g:CommandTMatchWindowReverse=1
+    " let g:CommandTMaxFiles=9000
+    " let g:CommandTMaxDepth=6
+    " map <Tab>t :CommandTFlush<CR>\|:CommandT<CR>
+    " map <Tab>b :CommandTBuffer<CR>
 
-" Command-T Rails
-map <Tab>m :CommandTFlush<CR>\|:CommandT app/models<CR>
-map <Tab>c :CommandTFlush<CR>\|:CommandT app/controllers<CR>
-map <Tab>v :CommandTFlush<CR>\|:CommandT app/views<CR>
-map <Tab>s :CommandTFlush<CR>\|:CommandT spec<CR>
+    " " Command-T Rails
+    " map <Tab>m :CommandTFlush<CR>\|:CommandT app/models<CR>
+    " map <Tab>c :CommandTFlush<CR>\|:CommandT app/controllers<CR>
+    " map <Tab>v :CommandTFlush<CR>\|:CommandT app/views<CR>
+    " map <Tab>s :CommandTFlush<CR>\|:CommandT spec<CR>
+" elseif ctrlp.vim
+    map <Tab>t :CtrlP<CR>
+    map <Tab>b :CtrlPBuffer<CR>
+
+    " ctrlp.vim Rails
+    map <Tab>m :CtrlP app/models<CR>
+    map <Tab>c :CtrlP app/controllers<CR>
+    map <Tab>v :CtrlP app/views<CR>
+    map <Tab>a :CtrlP app/assets<CR>
+    map <Tab>s :CtrlP spec<CR>
+" endif
 
 " Gundo
 nmap <Tab>u :GundoToggle<CR>
