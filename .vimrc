@@ -132,6 +132,7 @@ map <S-Tab> :NERDTreeToggle<CR>
     " map <Tab>v :CommandTFlush<CR>\|:CommandT app/views<CR>
     " map <Tab>s :CommandTFlush<CR>\|:CommandT spec<CR>
 " elseif ctrlp.vim
+    let g:ctrlp_working_path_mode = 0
     map <Tab>t :CtrlP<CR>
     map <Tab>b :CtrlPBuffer<CR>
 
