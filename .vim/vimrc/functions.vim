@@ -2,7 +2,7 @@
 function! StatuslineCurrentHighlight()
     let name = synIDattr(synID(line('.'),col('.'),1),'name')
     if name == ''
-        return ''
+        return ' '
     else
         return '[' . name . ']'
     endif

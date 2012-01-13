@@ -158,3 +158,4 @@ let g:syntastic_stl_format='[%E{err:%fe #%e}%B{, }%W{warn:%fw #%w}]'
 
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
+let g:Powerline_theme = 'my_way'
