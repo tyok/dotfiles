@@ -36,15 +36,17 @@ call Pl#Statusline(
 			\ Pl#HiCurrent(   Pl#FG(250)),
 			\ Pl#HiInsert(    Pl#FG(117)),
 			\ Pl#HiNonCurrent(Pl#FG(239))
-			\ ),
-		\ Pl#Segment("%{Stl_GetSyntaxErrors('$line')}",
-			\ exists('g:loaded_syntastic_plugin') && g:loaded_syntastic_plugin == 1,
-			\
-			\ Pl#HiCurrent(   Pl#FG(214), Pl#Attr('bold')),
-			\ Pl#HiInsert(    Pl#FG(214), Pl#Attr('bold')),
 			\ )
 		\ ),
 	\
+    \ Pl#Segment("%{Stl_GetSyntaxErrors('$line')}",
+        \ exists('g:loaded_syntastic_plugin') && g:loaded_syntastic_plugin == 1,
+        \
+        \ Pl#HiCurrent(   Pl#BG(236), Pl#FG(214), Pl#Attr('bold')),
+        \ Pl#HiInsert(    Pl#BG( 24), Pl#FG(214), Pl#Attr('bold')),
+        \ Pl#HiNonCurrent(Pl#BG(233), Pl#FG(214), Pl#Attr('bold'))
+        \ ),
+    \
 	\ Pl#Segment("%<%{Stl_GetCurrentFunction()}",
 		\ exists('g:cfi_disable') && g:cfi_disable == 0,
 		\
