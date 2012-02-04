@@ -4,7 +4,7 @@
 --type-add=ruby=rake,haml,feature
 --type-add=js=json,coffee
 --type-add=shell=zsh-theme
---type-set=css=scss
+--type-set=css=scss,less
 
 # add types ack doesn't know about
 --type-set=MARKDOWN=md,mkd,markdown
