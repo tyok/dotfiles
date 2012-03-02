@@ -27,7 +27,7 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found gem zsh-syntax-highlighting) # don't use bundler, git: slow!
+plugins=(command-not-found gem zsh-syntax-highlighting history-substring-search) # don't use bundler, git: slow!
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,6 +43,7 @@ alias gvim="gvim -f $@ &> /dev/null" # eradicate gvim error when exiting
 alias hgrep="history | grep $@"
 alias pgrep="ps ax | grep $@"
 
+alias rake="noglob rake" # allows square brackts for rake task invocation
 alias b='bundle'
 alias be='bundle exec'
 alias ber='bundle exec rake'
