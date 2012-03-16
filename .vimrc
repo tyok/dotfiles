@@ -61,6 +61,7 @@ map <Leader>c :noh<CR>
 set wrap
 set linebreak
 set nofoldenable
+let &showbreak=repeat('>>', 6)
 nnoremap j gj
 nnoremap k gk
 

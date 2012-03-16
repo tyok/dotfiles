@@ -1,5 +1,6 @@
 *.sw[nop]
 public/system
+public/uploads
 config/database.yml
 .rvmrc
 .rbenv-version
