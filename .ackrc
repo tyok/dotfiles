@@ -1,7 +1,7 @@
 # lexically sort filenames
 --sort-files
 
---type-add=ruby=rake,haml,feature
+--type-add=ruby=rake,haml,feature,slim
 --type-add=js=json,coffee
 --type-add=shell=zsh-theme
 --type-set=css=scss,less
