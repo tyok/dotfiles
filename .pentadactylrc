@@ -1,4 +1,4 @@
-nnoremap ; :
+nmap ; : -builtin
 
 map <C-k> <C-PageUp>
 map <C-j> <C-PageDown>
@@ -11,6 +11,7 @@ map <C-down> <C-j>
 
 map <C-S-up>   <C-S-k>
 map <C-S-down> <C-S-j>
+map \c :noh<CR>
 
 set incfind
 set hlfind

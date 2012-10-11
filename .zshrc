@@ -1,5 +1,6 @@
 # to source autojump
 source /etc/profile
+[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/Projects/oh-my-zsh
@@ -27,9 +28,10 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found gem zsh-syntax-highlighting history-substring-search) # don't use bundler, git: slow!
+plugins=(command-not-found gem zsh-syntax-highlighting git-flow-completion history-substring-search) # don't use bundler, git: slow!
 
 source $ZSH/oh-my-zsh.sh
+unsetopt correct_all
 
 # Customize to your needs...
 export EDITOR=vim
@@ -43,6 +45,7 @@ alias gvim="gvim -f $@ &> /dev/null" # eradicate gvim error when exiting
 alias hgrep="history | grep $@"
 alias pgrep="ps ax | grep $@"
 
+alias rpry="pry -r ./config/environment"
 alias rake="noglob rake" # allows square brackts for rake task invocation
 alias b='bundle'
 alias be='bundle exec'
@@ -62,3 +65,6 @@ export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

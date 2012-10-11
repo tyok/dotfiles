@@ -1,9 +1,9 @@
 [user]
     name         = Mohammad Satrio
-    email        = wolfaeon@gmail.com
+	email        = wolfaeon@gmail.com
 [core]
     editor       = vim
-    excludesfile = /home/tyok/Config/.gitignore
+    excludesfile = .gitignore
 [color]
     diff         = auto
     status       = auto
@@ -20,9 +20,9 @@
     wiff         = diff --color-words
     search       = "!f() { query=\"$1\"; shift; git log -S\"$query\" \"$@\"; }; f \"$@\""
     amend        = commit --amend -C HEAD
-    l            = log --graph
-    lol          = !git l --oneline
-    lstat        = !git l --patch-with-stat --summary
+    l            = log
+    lol          = !git log --pretty=format:"%C\\(bold\\ yellow\\)%h%Creset\\ %s%Creset\\ -------\\ %C\\(blue\\)%an"
+    lstat        = !git log --patch-with-stat --summary
     dh           = diff HEAD
 [format]
     pretty       = format:%C(bold yellow)%h%Creset %s %C(red)%d%Creset %n%Cgreen%ar%Creset %n%C(blue)%an%Creset%n 

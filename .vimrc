@@ -1,7 +1,7 @@
 call pathogen#infect()
 
-source $HOME/.vim/vimrc/functions.vim
 colo tomorrow-night
+set guifont=Ubuntu\ Mono\ Bold\ 12
 
 " Behaviors
 set nocompatible
@@ -15,19 +15,14 @@ set backspace=indent,eol,start
 
 autocmd BufEnter * lcd %:p:h  " for each buffer, auto-chdir to containing folder
 autocmd User BufEnterRails silent! Rlcd " but if it's rails, chdir to rails_root
-autocmd BufReadPost *                                          " When editing a file, always jump to the last known cursor position.
-            \ if line("'\"") > 0 && line("'\"") <= line("$") | " Don't do it when the position is invalid or when inside an event handler
-            \   exe "normal g`\"" |                            " (happens when dropping a file on gvim).
-            \ endif
-
 
 " activate persistent undo
 set undofile
 set undodir=~/.vim/undo
 
 " Store temporary files in a central spot
-set backupdir=~/.vim/tmp,/var/tmp,/tmp
-set directory=~/.vim/tmp,/var/tmp,/tmp
+set backupdir=~/.vim/tmp//
+set directory=~/.vim/tmp//
 
 " Scrolls
 set scrolloff=2
@@ -47,15 +42,15 @@ set cmdheight=2
 set wildignore+=*.pdf,*.ppt,*.zip,*.doc,*.xls " ignore office files
 set wildignore+=*.swp,*.png,*.jpg,*.gif,*.tar* " ignore non-text files
 set wildignore+=*.mp3,*.wmv,*.ogg,*.wav " ignore non-text files
-set wildignore+=solr/data/**,public/system/**,public/uploads/**,tmp/** " ignore some dir on rails project
-set wildignore+=.*/** " ignore hidden dir
+set wildignore+=*/solr/data/*,*/public/system/*,*/public/uploads/*,*/tmp/*,*/log/* " ignore some dir on rails project
+set wildignore+=*/.git/* " ignore hidden dir
 
 " Search
 set incsearch
 set hlsearch
 set ignorecase smartcase
-nnoremap <CR> :nohlsearch<CR>\|<CR>
 map <Leader>c :noh<CR>
+noremap <Esc><Esc><Esc> <Esc>:noh<CR>
 
 " Wrap
 set wrap
@@ -64,6 +59,8 @@ set nofoldenable
 let &showbreak=repeat('>>', 6)
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " Syntax highlight/completion
 syntax on
@@ -78,6 +75,9 @@ set softtabstop=4
 set smarttab
 set shiftwidth=4
 set expandtab
+
+" In-Out insert mode
+inoremap <C-l> <Esc>l
 
 " Demote ; to under leader key (I seldom use it)
 nnoremap <Leader>; ;
@@ -102,16 +102,25 @@ map <C-Left> <C-W>h
 nmap <Tab>q :lclose<CR>\|:cclose<CR>
 nmap <Tab>e :Errors<CR>
 
+" Ruby madness
+" inoremap aa @
+" inoremap - _
+" inoremap _ -
+" inoremap ' "
+" inoremap " '
+" inoremap : ;
+" inoremap ; :
+
 " Statusline
 set statusline=%#warningmsg#
 
-set statusline+=%{SyntasticStatuslineFlag()} " syntastic
+" set statusline+=%{SyntasticStatuslineFlag()} " syntastic
 
 set statusline+=%*
 set statusline+=\ %-.50(%<%f\ %y%)%m
 set statusline+=%=
-set statusline+=%{StatuslineCurrentHighlight()}\ \ 
-set statusline+=%-10.(line\ %l\ col\ %c%)\ "(%P)\ 
+set statusline+=%{StatuslineCurrentHighlight()}\ \
+set statusline+=%-10.(line\ %l\ col\ %c%)\ "(%P)\
 
 " NERDTree
 let NERDTreeWinPos="right"
@@ -120,30 +129,18 @@ let g:NERDTreeWinSize = 40
 map <F9> :NERDTreeToggle<CR>
 map <S-Tab> :NERDTreeToggle<CR>
 
-" if Command-T
-    " let g:CommandTMatchWindowReverse=1
-    " let g:CommandTMaxFiles=9000
-    " let g:CommandTMaxDepth=6
-    " map <Tab>t :CommandTFlush<CR>\|:CommandT<CR>
-    " map <Tab>b :CommandTBuffer<CR>
+" ctrlp.vim
+let g:ctrlp_working_path_mode = 0
+map <Tab>f :ClearAllCtrlPCaches<CR>
+map <Tab>t :CtrlP<CR>
+map <Tab>b :CtrlPBuffer<CR>
 
-    " " Command-T Rails
-    " map <Tab>m :CommandTFlush<CR>\|:CommandT app/models<CR>
-    " map <Tab>c :CommandTFlush<CR>\|:CommandT app/controllers<CR>
-    " map <Tab>v :CommandTFlush<CR>\|:CommandT app/views<CR>
-    " map <Tab>s :CommandTFlush<CR>\|:CommandT spec<CR>
-" elseif ctrlp.vim
-    let g:ctrlp_working_path_mode = 0
-    map <Tab>t :CtrlP<CR>
-    map <Tab>b :CtrlPBuffer<CR>
-
-    " ctrlp.vim Rails
-    map <Tab>m :CtrlP app/models<CR>
-    map <Tab>c :CtrlP app/controllers<CR>
-    map <Tab>v :CtrlP app/views<CR>
-    map <Tab>a :CtrlP app/assets<CR>
-    map <Tab>s :CtrlP spec<CR>
-" endif
+" ctrlp.vim Rails
+map <Tab>m :CtrlP app/models<CR>
+map <Tab>c :CtrlP app/controllers<CR>
+map <Tab>v :CtrlP app/views<CR>
+map <Tab>a :CtrlP app/assets<CR>
+map <Tab>s :CtrlP spec<CR>
 
 " Gundo
 nmap <Tab>u :GundoToggle<CR>
@@ -153,10 +150,13 @@ nmap <Leader><Tab> :exec ':Tab /'.getline('.')[col('.')-1].'.*$'<CR>
 vmap <Leader><Tab> y:Tab /<C-R>".*$<CR>
 
 " syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=0
-let g:syntastic_stl_format='[%E{err:%fe #%e}%B{, }%W{warn:%fw #%w}]'
+" let g:syntastic_enable_signs=1
+" let g:syntastic_quiet_warnings=0
+" let g:syntastic_stl_format='[%E{err:%fe #%e}%B{, }%W{warn:%fw #%w}]'
 
 " vim-powerline
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'compatible'
 let g:Powerline_theme = 'my_way'
+
+source $HOME/.vim/vimrc/functions.vim
+source $HOME/.vim/vimrc/large_file.vim
