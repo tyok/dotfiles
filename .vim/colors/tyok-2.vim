@@ -1,36 +1,28 @@
-" Tomorrow Night - Full Colour and 256 Colour
+" Tomorrow Night Eighties - Full Colour and 256 Colour
 " http://chriskempson.com
 "
 " Hex colour conversion functions borrowed from the theme "Desert256""
 
 " Default GUI Colours
-let s:foreground = "c5c8c6"
-let s:background = "1d1f21"
-let s:selection = "373b41"
-let s:line = "282a2e"
-let s:comment = "969896"
-let s:red = "cc6666"
-let s:orange = "de935f"
-let s:yellow = "f0c674"
-let s:green = "b5bd68"
-let s:aqua = "8abeb7"
-let s:blue = "81a2be"
-let s:purple = "b294bb"
+let s:foreground = "cccccc"
+let s:background = "2d2d2d"
+let s:selection = "515151"
+let s:line = "393939"
+let s:comment = "999999"
+let s:red = "f2777a"
+let s:orange = "DB8658"
+let s:yellow = "ffcc66"
+let s:green = "9add9a"
+let s:aqua = "66cccc"
+let s:blue = "6D9BC9"
+let s:purple = "cc99cc"
 let s:window = "4d5057"
-
-" Console 256 Colours
-if !has("gui_running")
-	let s:background = "303030"
-	let s:window = "5e5e5e"
-	let s:line = "3a3a3a"
-	let s:selection = "585858"
-end
 
 set background=dark
 hi clear
 syntax reset
 
-let g:colors_name = "tomorrow-night"
+let g:colors_name = "Tomorrow-Night-Tyok"
 
 if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Returns an approximate grey index for the given grey level
@@ -278,13 +270,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Conditional", s:foreground, "", "")
 	call <SID>X("Repeat", s:foreground, "", "")
 	call <SID>X("Structure", s:purple, "", "")
-	call <SID>X("Function", s:purple, "", "")
+	call <SID>X("Function", s:blue, "", "")
 	call <SID>X("Constant", s:orange, "", "")
-	call <SID>X("String", s:green, "", "")
+	call <SID>X("String", s:window, "", "")
 	call <SID>X("Special", s:foreground, "", "")
 	call <SID>X("PreProc", s:purple, "", "")
 	call <SID>X("Operator", s:aqua, "", "none")
-	call <SID>X("Type", s:blue, "", "none")
+	call <SID>X("Type", s:yellow, "", "none")
 	call <SID>X("Define", s:purple, "", "none")
 	call <SID>X("Include", s:blue, "", "")
 	"call <SID>X("Ignore", "666666", "", "")
@@ -308,17 +300,17 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Ruby Highlighting
 	call <SID>X("rubySymbol", s:green, "", "")
+    call <SID>X("rubyControl", s:purple, "", "")
 	call <SID>X("rubyConstant", s:yellow, "", "")
-    call <SID>X("railsClass", s:yellow, "", "")
-    call <SID>X("rubyAttribute", s:blue, "", "")
-	call <SID>X("railsMethod", s:blue, "", "")
+	call <SID>X("rubyAttribute", s:blue, "", "")
 	call <SID>X("rubyInclude", s:blue, "", "")
 	call <SID>X("rubyLocalVariableOrMethod", s:orange, "", "")
-	" call <SID>X("rubyCurlyBlock", s:orange, "", "")
-	call <SID>X("rubyStringDelimiter", s:green, "", "")
+	call <SID>X("rubyCurlyBlock", s:orange, "", "")
+	call <SID>X("rubyStringDelimiter", s:orange, "", "")
 	call <SID>X("rubyInterpolationDelimiter", s:orange, "", "")
 	call <SID>X("rubyConditional", s:purple, "", "")
 	call <SID>X("rubyRepeat", s:purple, "", "")
+    call <SID>X("railsMethod", s:blue, "", "")
 
 	" Python Highlighting
 	call <SID>X("pythonInclude", s:purple, "", "")
@@ -333,6 +325,12 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("javaScriptRepeat", s:purple, "", "")
 	call <SID>X("javaScriptNumber", s:orange, "", "")
 	call <SID>X("javaScriptMember", s:orange, "", "")
+
+	" HTML Highlighting
+	call <SID>X("htmlTag", s:red, "", "")
+	call <SID>X("htmlTagName", s:red, "", "")
+	call <SID>X("htmlArg", s:red, "", "")
+	call <SID>X("htmlScriptTag", s:red, "", "")
 
 	" Diff Highlighting
 	call <SID>X("diffAdded", s:green, "", "")
