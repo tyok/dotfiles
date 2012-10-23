@@ -59,6 +59,7 @@ alias gsub='git submodule'
 # LOL
 alias plz="sudo"
 
+export MY_RUBY_HOME="/home/tyok/.rbenv/versions/1.9.3-p125-perf"
 # moar rails speed
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000

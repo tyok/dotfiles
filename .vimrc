@@ -1,6 +1,6 @@
 call pathogen#infect()
 
-colo tomorrow-night
+colo aeonight
 set guifont=Ubuntu\ Mono\ Bold\ 12
 
 " Behaviors
@@ -12,9 +12,6 @@ set encoding=utf8
 set fileencoding=utf8
 set whichwrap=b,s,h,l,~,[,],<,>
 set backspace=indent,eol,start
-
-autocmd BufEnter * lcd %:p:h  " for each buffer, auto-chdir to containing folder
-autocmd User BufEnterRails silent! Rlcd " but if it's rails, chdir to rails_root
 
 " activate persistent undo
 set undofile
@@ -110,6 +107,11 @@ nmap <Tab>e :Errors<CR>
 " inoremap " '
 " inoremap : ;
 " inoremap ; :
+let ruby_no_expensive = 1
+let ruby_operators = 1
+if !empty($MY_RUBY_HOME)
+    let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/ruby/site_ruby/*'),"\n"),',')
+endif
 
 " Statusline
 set statusline=%#warningmsg#
@@ -122,18 +124,21 @@ set statusline+=%=
 set statusline+=%{StatuslineCurrentHighlight()}\ \
 set statusline+=%-10.(line\ %l\ col\ %c%)\ "(%P)\
 
+autocmd BufEnter * lcd %:p:h  " for each buffer, auto-chdir to containing folder
+autocmd User BufEnterRails silent! Rlcd " but if it's rails, chdir to rails_root
+
 " NERDTree
-let NERDTreeWinPos="right"
-let NERDTreeMinimalUI=1
-let g:NERDTreeWinSize = 40
+let g:NERDTreeWinPos="right"
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeWinSize=40
 map <F9> :NERDTreeToggle<CR>
 map <S-Tab> :NERDTreeToggle<CR>
 
 " ctrlp.vim
 let g:ctrlp_working_path_mode = 0
-map <Tab>f :ClearAllCtrlPCaches<CR>
-map <Tab>t :CtrlP<CR>
+map <Tab>f :CtrlP<CR>
 map <Tab>b :CtrlPBuffer<CR>
+map <Tab>l :CtrlPLine<CR>
 
 " ctrlp.vim Rails
 map <Tab>m :CtrlP app/models<CR>
@@ -156,7 +161,10 @@ vmap <Leader><Tab> y:Tab /<C-R>".*$<CR>
 
 " vim-powerline
 let g:Powerline_symbols = 'compatible'
-let g:Powerline_theme = 'my_way'
+let g:Powerline_theme = 'aeonight'
+let g:Powerline_colorscheme = 'aeonight'
+let g:Powerline_cache_enabled = 0
 
 source $HOME/.vim/vimrc/functions.vim
 source $HOME/.vim/vimrc/large_file.vim
+
