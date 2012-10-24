@@ -4,7 +4,7 @@ function! StatuslineCurrentHighlight()
     if name == ''
         return ' '
     else
-        return '[' . name . ']'
+        return name
     endif
 endfunction
 

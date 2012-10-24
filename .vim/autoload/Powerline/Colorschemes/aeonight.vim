@@ -55,7 +55,7 @@ let g:Powerline#Colorschemes#aeonight#colorscheme = Pl#Colorscheme#Init([
 		\ 's': ['white', 'gray5', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['branch', 'scrollpercent', 'raw', 'filesize'], {
+	\ Pl#Hi#Segments(['branch', 'filetype', 'raw', 'filesize'], {
 		\ 'n': ['gray9', 'gray4'],
 		\ 'N': ['gray4', 'gray2'],
 		\ 'i': ['mediumcyan', 'darkblue'],
@@ -85,7 +85,7 @@ let g:Powerline#Colorschemes#aeonight#colorscheme = Pl#Colorscheme#Init([
 		\ 'i': ['brightestred', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['currenttag', 'fullcurrenttag', 'fileformat', 'fileencoding', 'pwd', 'filetype', 'rvm:string', 'rvm:statusline', 'virtualenv:statusline', 'charcode', 'currhigroup'], {
+	\ Pl#Hi#Segments(['currenttag', 'fullcurrenttag', 'fileformat', 'highlight:statusline', 'fileencoding', 'pwd', 'rvm:string', 'rvm:statusline', 'virtualenv:statusline', 'charcode', 'currhigroup'], {
 		\ 'n': ['gray8', 'gray2'],
 		\ 'i': ['mediumcyan', 'darkestblue'],
 		\ }),

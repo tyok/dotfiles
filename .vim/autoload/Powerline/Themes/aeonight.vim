@@ -9,12 +9,12 @@ let g:Powerline#Themes#aeonight#theme = Pl#Theme#Create(
 		\ , Pl#Segment#Truncate()
 		\ , 'tagbar:currenttag'
 		\ , Pl#Segment#Split()
+        \ , 'highlight:statusline'
 		\ , 'rvm:string'
 		\ , 'virtualenv:statusline'
 		\ , 'fileformat'
 		\ , 'fileencoding'
 		\ , 'filetype'
-		\ , 'scrollpercent'
 		\ , 'lineinfo'
 	\ ),
 	\
@@ -44,7 +44,6 @@ let g:Powerline#Themes#aeonight#theme = Pl#Theme#Create(
 		\ , 'filename'
 		\ , Pl#Segment#Truncate()
 		\ , Pl#Segment#Split()
-		\ , 'scrollpercent'
 	\ ),
 	\
 	\ Pl#Theme#Buffer('ft_vimpager'
@@ -52,7 +51,6 @@ let g:Powerline#Themes#aeonight#theme = Pl#Theme#Create(
 		\ , 'filename'
 		\ , Pl#Segment#Truncate()
 		\ , Pl#Segment#Split()
-		\ , 'scrollpercent'
 	\ ),
 	\
 	\ Pl#Theme#Buffer('lustyexplorer'
@@ -67,7 +65,6 @@ let g:Powerline#Themes#aeonight#theme = Pl#Theme#Create(
 		\ , 'filename'
 		\ , Pl#Segment#Truncate()
 		\ , Pl#Segment#Split()
-		\ , 'scrollpercent'
 	\ ),
 	\
 	\ Pl#Theme#Buffer('minibufexplorer'
