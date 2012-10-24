@@ -1,7 +1,7 @@
 call pathogen#infect()
 
 colo aeonight
-set guifont=Ubuntu\ Mono\ Bold\ 12
+set guifont=Ubuntu\ Mono\ for\ Powerline\ Bold\ 12
 
 " Behaviors
 set nocompatible
@@ -165,7 +165,7 @@ vmap <Leader><Tab> y:Tab /<C-R>".*$<CR>
 " let g:syntastic_stl_format='[%E{err:%fe #%e}%B{, }%W{warn:%fw #%w}]'
 
 " vim-powerline
-let g:Powerline_symbols = 'compatible'
+let g:Powerline_symbols = 'fancy'
 let g:Powerline_theme = 'aeonight'
 let g:Powerline_colorscheme = 'aeonight'
 let g:Powerline_cache_enabled = 0
