@@ -261,6 +261,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("FoldColumn", "", s:background, "")
     call <SID>X("ErrorMsg", s:red, s:background, "")
     call <SID>X("Error", s:red, s:background, "")
+    call <SID>X("StorageClass", s:aqua, s:background, "")
 	if version >= 700
 		call <SID>X("CursorLine", "", s:line, "none")
 		call <SID>X("CursorColumn", "", s:line, "none")
@@ -332,6 +333,18 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("pythonStatement", s:purple, "", "")
 	call <SID>X("pythonConditional", s:purple, "", "")
 	call <SID>X("pythonFunction", s:blue, "", "")
+
+    " CSS Highlighting
+    call <SID>X("cssTagName", s:blue, "", "")
+    call <SID>X("cssClassName", s:purple, "", "")
+    call <SID>X("sassClass", s:purple, "", "")
+    call <SID>X("cssIdentifier", s:orange, "", "")
+    call <SID>X("cssBraces", s:window, "", "")
+    call <SID>X("cssPseudoClassId", s:green, "", "")
+    call <SID>X("cssValuelength", s:foreground, "", "")
+    call <SID>X("cssValueNumber", s:foreground, "", "")
+    call <SID>X("cssColor", s:green, "", "")
+    call <SID>X("cssMediaComma", s:window, "", "")
 
 	" JavaScript Highlighting
 	call <SID>X("javaScriptBraces", s:foreground, "", "")
