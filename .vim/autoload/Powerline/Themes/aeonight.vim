@@ -1,10 +1,10 @@
 let g:Powerline#Themes#aeonight#theme = Pl#Theme#Create(
 	\ Pl#Theme#Buffer(''
-		\ , 'paste_indicator'
-		\ , 'mode_indicator'
-		\ , 'fugitive:branch'
-		\ , 'hgrev:branch'
+        \ , 'paste_indicator'
 		\ , 'fileinfo'
+        \ , 'fugitive:branch'
+        \ , 'hgrev:branch'
+        \ , 'mode_indicator'
 		\ , 'syntastic:errors'
 		\ , Pl#Segment#Truncate()
 		\ , 'tagbar:currenttag'

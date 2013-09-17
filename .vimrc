@@ -1,4 +1,6 @@
-call pathogen#infect()
+source $HOME/.vim/vimrc/vundle.vim
+source $HOME/.vim/vimrc/functions.vim
+source $HOME/.vim/vimrc/large_file.vim
 
 colo aeonight
 set guifont=Ubuntu\ Mono\ for\ Powerline\ Bold\ 12
@@ -12,6 +14,8 @@ set encoding=utf8
 set fileencoding=utf8
 set whichwrap=b,s,h,l,~,[,],<,>
 set backspace=indent,eol,start
+set splitbelow
+set splitright
 
 " activate persistent undo
 set undofile
@@ -47,7 +51,7 @@ set incsearch
 set hlsearch
 set ignorecase smartcase
 map <Leader>c :noh<CR>
-noremap <Esc><Esc><Esc> <Esc>:noh<CR>
+" noremap <Esc><Esc><Esc> <Esc>:noh<CR>
 
 " Wrap
 set wrap
@@ -58,6 +62,12 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
+
+" Mad arrow keys
+imap OA <up>
+imap OB <down>
+imap OC <right>
+imap OD <left>
 
 " Syntax highlight/completion
 syntax on
@@ -79,7 +89,7 @@ set shiftwidth=4
 set expandtab
 
 " In-Out insert mode
-inoremap <C-l> <Esc>l
+" inoremap <Esc> <C-c>
 
 " Demote ; to under leader key (I seldom use it)
 nnoremap <Leader>; ;
@@ -168,39 +178,40 @@ vmap <Leader><Tab> y:Tab /<C-R>".*$<CR>
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_theme = 'aeonight'
 let g:Powerline_colorscheme = 'aeonight'
-let g:Powerline_cache_enabled = 0
+let g:Powerline_cache_enabled = 1
 
-" supertab
-let g:SuperTabMappingForward = '<s-tab>'
-let g:SuperTabMappingBackward = '<tab>'
+" " supertab
+" let g:SuperTabMappingForward = '<s-tab>'
+" let g:SuperTabMappingBackward = '<tab>'
 
-" neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_underbar_completion = 0
-let g:neocomplcache_enable_camel_case_completion = 0
-let g:neocomplcache_enable_fuzzy_completion = 1
-let g:neocomplcache_fuzzy_completion_start_length = 1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_enable_auto_select = 0
-let g:neocomplcache_max_list = 15
-let g:neocomplcache_force_overwrite_completefunc = 1
-imap <silent><expr><tab> neocomplcache#sources#snippets_complete#expandable() ? "\<plug>(neocomplcache_snippets_expand)" : (pumvisible() ? "\<c-e>" : "\<tab>")
-smap <tab> <right><plug>(neocomplcache_snippets_jump) 
-inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup()."\<CR>" : "\<CR>"
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><s-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
+" " neocomplcache
+" let g:neocomplcache_enable_at_startup = 1
+" let g:neocomplcache_enable_smart_case = 1
+" let g:neocomplcache_enable_underbar_completion = 0
+" let g:neocomplcache_enable_camel_case_completion = 0
+" let g:neocomplcache_enable_fuzzy_completion = 1
+" let g:neocomplcache_fuzzy_completion_start_length = 1
+" let g:neocomplcache_min_syntax_length = 3
+" let g:neocomplcache_enable_auto_select = 0
+" let g:neocomplcache_max_list = 15
+" let g:neocomplcache_force_overwrite_completefunc = 1
+" imap <silent><expr><tab> neocomplcache#sources#snippets_complete#expandable() ? "\<plug>(neocomplcache_snippets_expand)" : (pumvisible() ? "\<c-e>" : "\<tab>")
+" smap <tab> <right><plug>(neocomplcache_snippets_jump) 
+" inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup()."\<CR>" : "\<CR>"
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><s-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
+" inoremap <expr><Left>  pumvisible() ? neocomplcache#close_popup()."\<Left>" : "\<Left>"
+" inoremap <expr><Right>  pumvisible() ? neocomplcache#close_popup()."\<Right>" : "\<Right>"
+" inoremap <expr><Up>  pumvisible() ? neocomplcache#close_popup()."\<Up>" : "\<Up>"
+" inoremap <expr><Down>  pumvisible() ? neocomplcache#close_popup()."\<Down>" : "\<Down>"
+"
+" if !exists('g:neocomplcache_keyword_patterns')
+"   let g:neocomplcache_keyword_patterns = {}
+" endif
+" let g:neocomplcache_keyword_patterns._ = '\h\w*'
 
-if !exists('g:neocomplcache_keyword_patterns')
-  let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns._ = '\h\w*'
-
-if !exists('g:neocomplcache_omni_patterns')
-let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
-
-source $HOME/.vim/vimrc/functions.vim
-source $HOME/.vim/vimrc/large_file.vim
+" if !exists('g:neocomplcache_omni_patterns')
+" let g:neocomplcache_omni_patterns = {}
+" endif
+" let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 

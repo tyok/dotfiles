@@ -7,3 +7,5 @@ config/database.yml
 .vim/undo/
 .vim/tmp
 .vim/.*
+.vim/bundle
+.vim/bundle_unused

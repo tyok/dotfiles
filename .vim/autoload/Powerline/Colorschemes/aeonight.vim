@@ -27,7 +27,8 @@ call Pl#Hi#Allocate({
 	\ 'mediumorange'   : 208,
 	\ 'brightorange'   : 179,
 	\
-	\ 'gray0'          : 233,
+    \ 'gray-1'         : 233,
+	\ 'gray0'          : 234,
 	\ 'gray1'          : 235,
 	\ 'gray2'          : 236,
 	\ 'gray3'          : 239,
@@ -38,6 +39,7 @@ call Pl#Hi#Allocate({
 	\ 'gray8'          : 247,
 	\ 'gray9'          : 250,
 	\ 'gray10'         : 252,
+    \ 'gray11'         : 253,
 	\ })
 
 let g:Powerline#Colorschemes#aeonight#colorscheme = Pl#Colorscheme#Init([
@@ -57,18 +59,18 @@ let g:Powerline#Colorschemes#aeonight#colorscheme = Pl#Colorscheme#Init([
 	\
 	\ Pl#Hi#Segments(['branch', 'filetype', 'raw', 'filesize'], {
 		\ 'n': ['gray9', 'gray4'],
-		\ 'N': ['gray4', 'gray2'],
+		\ 'N': ['gray-1', 'gray2'],
 		\ 'i': ['mediumcyan', 'darkblue'],
 		\ }),
 	\
 	\ Pl#Hi#Segments(['fileinfo', 'filename'], {
-		\ 'n': ['white', 'gray4', ['bold']],
+		\ 'n': ['gray11', 'gray4', ['bold']],
 		\ 'N': ['gray7', 'gray0', ['bold']],
 		\ 'i': ['white', 'darkblue', ['bold']],
 		\ }),
 	\
 	\ Pl#Hi#Segments(['fileinfo.filepath'], {
-		\ 'n': ['gray10'],
+		\ 'n': ['gray8'],
 		\ 'N': ['gray5'],
 		\ 'i': ['mediumcyan'],
 		\ }),
@@ -80,9 +82,9 @@ let g:Powerline#Colorschemes#aeonight#colorscheme = Pl#Colorscheme#Init([
 		\ }),
 	\
 	\ Pl#Hi#Segments(['fileinfo.flags'], {
-		\ 'n': ['brightestred', ['bold']],
+		\ 'n': ['darkestred', ['bold']],
 		\ 'N': ['darkred'],
-		\ 'i': ['brightestred', ['bold']],
+		\ 'i': ['darkestred', ['bold']],
 		\ }),
 	\
 	\ Pl#Hi#Segments(['currenttag', 'fullcurrenttag', 'fileformat', 'highlight:statusline', 'fileencoding', 'pwd', 'rvm:string', 'rvm:statusline', 'virtualenv:statusline', 'charcode', 'currhigroup'], {
@@ -92,7 +94,7 @@ let g:Powerline#Colorschemes#aeonight#colorscheme = Pl#Colorscheme#Init([
 	\
 	\ Pl#Hi#Segments(['lineinfo'], {
 		\ 'n': ['gray2', 'gray10', ['bold']],
-		\ 'N': ['gray7', 'gray3', ['bold']],
+		\ 'N': ['gray7', 'gray0', ['bold']],
 		\ 'i': ['darkestcyan', 'mediumcyan', ['bold']],
 		\ }),
 	\
@@ -127,8 +129,8 @@ let g:Powerline#Colorschemes#aeonight#colorscheme = Pl#Colorscheme#Init([
 		\ }),
 	\
 	\ Pl#Hi#Segments(['lustyexplorer:static_str.name', 'minibufexplorer:static_str.name', 'nerdtree:raw.name', 'tagbar:static_str.name'], {
-		\ 'n': ['gray9', 'gray4', ['bold']],
-		\ 'N': ['gray9', 'gray4', ['bold']],
+		\ 'n': ['gray7', 'gray0', ['bold']],
+		\ 'N': ['gray7', 'gray0', ['bold']],
 		\ }),
 	\
 	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer'], {

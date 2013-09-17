@@ -36,6 +36,21 @@ rescue LoadError => err
   puts "no awesome_print :("
 end
 
+def nice_methods
+  Object.module_eval do
+    def methods_nice
+      (methods - Object.new.methods).sort
+    end
+  end
+end
+
+def url_helpers
+  if defined? Rails
+    include Rails.application.routes.url_helpers
+    default_url_options[:host] = "localhost"
+  end
+end
+
 ###############################################################################
 ###############################################################################
 # start config here
@@ -43,7 +58,9 @@ end
 
 Pry.config.history.file = "~/.irb_history"
 
-print_with_awesomeness
-launch_rails_console_if_is_rails_dir
+# print_with_awesomeness
+# launch_rails_console_if_is_rails_dir
+nice_methods
+url_helpers
 
 # vim: ft=ruby

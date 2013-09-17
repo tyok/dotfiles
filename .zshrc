@@ -1,5 +1,4 @@
 # to source autojump
-source /etc/profile
 [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
 
 # Path to your oh-my-zsh configuration.
@@ -9,7 +8,7 @@ ZSH=$HOME/Projects/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="tyok"
+ZSH_THEME="powerborder"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -66,6 +65,11 @@ export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
+
+export PATH="./bin:$PATH"
+
+export GOROOT="$HOME/Projects/go"
+export PATH="$PATH:$GOROOT/bin"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
