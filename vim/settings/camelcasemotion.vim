@@ -1,7 +1,3 @@
-map W <Plug>CamelCaseMotion_w
-map B <Plug>CamelCaseMotion_b
-map E <Plug>CamelCaseMotion_e
-
-sunmap W
-sunmap B
-sunmap E
+map ,w <Plug>CamelCaseMotion_w
+map ,b <Plug>CamelCaseMotion_b
+map ,e <Plug>CamelCaseMotion_e

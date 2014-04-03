@@ -2,3 +2,7 @@
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 30
+let g:NERDTreeWinPos = "right"
+
+nmap <S-Tab> :NERDTreeToggle<CR>
+" autocmd vimenter * if !argc() | NERDTree | endif

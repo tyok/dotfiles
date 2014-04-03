@@ -12,6 +12,8 @@ nnoremap ,yw yiww
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
 nnoremap ,ow "_diwhp
 
+nnoremap ; :
+
 "make Y consistent with C and D
 nnoremap Y y$
 function! YRRunAfterMaps()
@@ -75,7 +77,7 @@ vmap ,{ c{<C-R>"}<ESC>
 map ,` ysiw`
 
 " gary bernhardt's hashrocket
-imap <c-l> <space>=><space>
+" imap <c-l> <space>=><space>
 
 " Change inside various enclosures with Cmd-" and Cmd-'
 " The f makes it find the enclosure so you don't have
@@ -173,10 +175,10 @@ nnoremap <D-Left> <C-w><
 nnoremap <D-Right>  <C-w>>
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
-imap <silent> <C-K> <%=   %><Esc>3hi
+" imap <silent> <C-K> <%=   %><Esc>3hi
 
 " create <%= foo %> erb tags using Ctrl-j in edit mode
-imap <silent> <C-J> <%  %><Esc>2hi
+" imap <silent> <C-J> <%  %><Esc>2hi
 
 " ============================
 " Shortcuts for everyday tasks
@@ -228,3 +230,4 @@ map <D-%> :so %<CR>
 
 " ,hp = html preview
 map <silent> ,hp :!open -a Safari %<CR><CR>
+nmap - _
